@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper Resources</title>
+    <!-- Create best meta for awesome SEO -->
+    <meta name="description" content="Responsive Web Site">
+    <meta name="keywords" content="Responsive, Web, Site">
+    <meta name="author" content="Responsive Web Site">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="title">
+        <h1>Linux <span>wallpapers</span></h1>
+        <p>Get an opensource site created with Copilot</p>
+    </div>
+    <div class="container-grid">
+            <!-- Use a javascript to add all wallpapers in .jpg from wallpaper folder and add in the <img src=""> html -->
+            <script>
+                var wallpaper = [];
+                var wallpapers_dir = "wallpapers/";
+                var wallpapers_ext = ".jpg";
+                // get wallpapers for number and add <div class="card-image"> <img src=""> to the html
+                for (var i = 1; i <= 10; i++) {
+                    wallpaper.push(wallpapers_dir + i + wallpapers_ext);
+                    document.write('<div class="card-image"><img src="' + wallpaper[i-1] + '"></div>');
+                }
+                // use javascript to open imagen when click on it
+                for (var i = 0; i < wallpaper.length; i++) {
+                    document.getElementsByTagName("img")[i].onclick = function() {
+                        window.open(this.src);
+                    }
+                }
+            </script>
+    </div>
+</body>
+</html>
