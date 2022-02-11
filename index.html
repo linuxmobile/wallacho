@@ -14,31 +14,57 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <!-- Style -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="stylesheet" href="css/style.css"></head>
+    <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
 <body>
     <div class="title">
         <h1>Linux <span>wallpapers</span></h1>
         <p>Get an opensource site created with Copilot</p>
     </div>
+    <div class="container-grid" >
+        <script>
+        var wallpaper = [];
+        var wallpapers_dir = "wallpapers/";
+        var wallpapers_ext = ".jpg";
+        // get wallpapers for number and add <div class="card-image"> <img src=""> to the html
+        for (var i = 1; i <= 57; i++) {
+            wallpaper.push(wallpapers_dir + i + wallpapers_ext);
+            document.write('<div class="card-image"><img loading="lazy" src="' + wallpaper[i-1] + '"></div>');
+        }
+        </script>
+    </div>
     <div class="container-grid">
-            <!-- Use a javascript to add all wallpapers in .jpg from wallpaper folder and add in the <img src=""> html -->
+        <script>
+            var wallpaper = [];
+            var wallpapers_dir = "wallpapers/";
+            var wallpapers_ext = ".jpeg";
+            // get wallpapers for number and add <div class="card-image"> <img src=""> to the html
+            for (var i = 1; i <= 2; i++) {
+                wallpaper.push(wallpapers_dir + i + wallpapers_ext);
+                document.write('<div class="card-image"><img loading="lazy" src="' + wallpaper[i-1] + '"></div>');
+            }
+            </script>
+    </div>
+    <div class="container-grid">
             <script>
                 var wallpaper = [];
                 var wallpapers_dir = "wallpapers/";
-                var wallpapers_ext = ".jpg";
+                var wallpapers_ext = ".png";
                 // get wallpapers for number and add <div class="card-image"> <img src=""> to the html
-                for (var i = 1; i <= 10; i++) {
+                for (var i = 1; i <= 44; i++) {
                     wallpaper.push(wallpapers_dir + i + wallpapers_ext);
-                    document.write('<div class="card-image"><img src="' + wallpaper[i-1] + '"></div>');
+                    document.write('<div class="card-image"><img loading="lazy" src="' + wallpaper[i-1] + '"></div>');
                 }
-                // use javascript to open imagen when click on it
-                for (var i = 0; i < wallpaper.length; i++) {
-                    document.getElementsByTagName("img")[i].onclick = function() {
-                        window.open(this.src);
-                    }
-                }
-            </script>
+                </script>
     </div>
+    <script>
+        // create a javascript to open any image in a new tab
+        var images = document.getElementsByTagName('img');
+        for (var i = 0; i < images.length; i++) {
+            images[i].onclick = function() {
+                window.open(this.src);
+            }
+        }
+    </script>
 </body>
 </html>
